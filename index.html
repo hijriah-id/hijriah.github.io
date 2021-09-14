@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to get the square root of each element in the array.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="hari"></p>
+<p id="masehi"></p>
+<p id="hijriah"></p>
+
+<script>
+
+var monthNames = ["Januari", "Februari", "Maret", "April", "Mei","Juni","Juli", "Agustus", "September", "Oktober", "November","Desember"];
+var days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+var hari = new Date();
+var dayName = days[hari.getDay()];
+let map = new Map([
+  ['28042021','16 Ramadhan 1442 H'],['29042021','17 Ramadhan 1442 H'],['30042021','18 Ramadhan 1442 H'],['01052021','19 Ramadhan 1442 H'],['02052021','20 Ramadhan 1442 H'],['03052021','21 Ramadhan 1442 H'],['04052021','22 Ramadhan 1442 H'],['05052021','23 Ramadhan 1442 H'],['06052021','24 Ramadhan 1442 H'],['07052021','25 Ramadhan 1442 H'],['08052021','26 Ramadhan 1442 H'],['09052021','27 Ramadhan 1442 H'],['10052021','28 Ramadhan 1442 H'],['11052021','29 Ramadhan 1442 H'],['12052021','30 Ramadhan 1442 H'],['13052021','1 Syawal 1442 H'],['14052021','2 Syawal 1442 H'],['15052021','3 Syawal 1442 H'],['16052021','4 Syawal 1442 H'],['17052021','5 Syawal 1442 H'],['18052021','6 Syawal 1442 H'],['19052021','7 Syawal 1442 H'],['20052021','8 Syawal 1442 H'],['21052021','9 Syawal 1442 H'],['22052021','10 Syawal 1442 H'],['23052021','11 Syawal 1442 H'],['24052021','12 Syawal 1442 H'],['25052021','13 Syawal 1442 H'],['26052021','14 Syawal 1442 H'],['27052021','15 Syawal 1442 H'],['28052021','16 Syawal 1442 H'],['29052021','17 Syawal 1442 H'],['30052021','18 Syawal 1442 H'],['31052021','19 Syawal 1442 H'],['01062021','20 Syawal 1442 H'],['02062021','21 Syawal 1442 H'],['03062021','22 Syawal 1442 H'],['04062021','23 Syawal 1442 H'],['05062021','24 Syawal 1442 H'],['06062021','25 Syawal 1442 H'],['07062021','26 Syawal 1442 H'],['08062021','27 Syawal 1442 H'],['09062021','28 Syawal 1442 H'],['10062021','29 Syawal 1442 H'],['11062021','30 Syawal 1442 H'],['12062021','1 Dzulkaiddah 1442 H'],['13062021','2 Dzulkaiddah 1442 H'],['14062021','3 Dzulkaiddah 1442 H'],['15062021','4 Dzulkaiddah 1442 H'],['16062021','5 Dzulkaiddah 1442 H'],['17062021','6 Dzulkaiddah 1442 H'],['18062021','7 Dzulkaiddah 1442 H'],['19062021','8 Dzulkaiddah 1442 H'],['20062021','9 Dzulkaiddah 1442 H'],['21062021','10 Dzulkaiddah 1442 H'],['22062021','11 Dzulkaiddah 1442 H'],['23062021','12 Dzulkaiddah 1442 H'],['24062021','13 Dzulkaiddah 1442 H'],['25062021','14 Dzulkaiddah 1442 H'],['26062021','15 Dzulkaiddah 1442 H'],['27062021','16 Dzulkaiddah 1442 H'],['28062021','17 Dzulkaiddah 1442 H'],['29062021','18 Dzulkaiddah 1442 H'],['30062021','19 Dzulkaiddah 1442 H'],['01072021','20 Dzulkaiddah 1442 H'],['02072021','21 Dzulkaiddah 1442 H'],['03072021','22 Dzulkaiddah 1442 H'],['04072021','23 Dzulkaiddah 1442 H'],['05072021','24 Dzulkaiddah 1442 H'],['06072021','25 Dzulkaiddah 1442 H'],['07072021','26 Dzulkaiddah 1442 H'],['08072021','27 Dzulkaiddah 1442 H'],['09072021','28 Dzulkaiddah 1442 H'],['10072021','29 Dzulkaiddah 1442 H'],['11072021','1 Dzulhijjah 1442 H'],['12072021','2 Dzulhijjah 1442 H'],['13072021','3 Dzulhijjah 1442 H'],['14072021','4 Dzulhijjah 1442 H'],['15072021','5 Dzulhijjah 1442 H'],['16072021','6 Dzulhijjah 1442 H'],['17072021','7 Dzulhijjah 1442 H'],['18072021','8 Dzulhijjah 1442 H'],['19072021','9 Dzulhijjah 1442 H'],['20072021','10 Dzulhijjah 1442 H'],['21072021','11 Dzulhijjah 1442 H'],['22072021','12 Dzulhijjah 1442 H'],['23072021','13 Dzulhijjah 1442 H'],['24072021','14 Dzulhijjah 1442 H'],['25072021','15 Dzulhijjah 1442 H'],['26072021','16 Dzulhijjah 1442 H'],['27072021','17 Dzulhijjah 1442 H'],['28072021','18 Dzulhijjah 1442 H'],['29072021','19 Dzulhijjah 1442 H'],['30072021','20 Dzulhijjah 1442 H'],['31072021','21 Dzulhijjah 1442 H'],['01082021','22 Dzulhijjah 1442 H'],['02082021','23 Dzulhijjah 1442 H'],['03082021','24 Dzulhijjah 1442 H'],['04082021','25 Dzulhijjah 1442 H'],['05082021','26 Dzulhijjah 1442 H'],['06082021','27 Dzulhijjah 1442 H'],['07082021','28 Dzulhijjah 1442 H'],['08082021','29 Dzulhijjah 1442 H'],['09082021','30 Dzulhijjah 1442 H'],['10082021','1 Muharram 1443 H'],['11082021','2 Muharram 1443 H'],['12082021','3 Muharram 1443 H'],['13082021','4 Muharram 1443 H'],['14082021','5 Muharram 1443 H'],['15082021','6 Muharram 1443 H'],['16082021','7 Muharram 1443 H'],['17082021','8 Muharram 1443 H'],['18082021','9 Muharram 1443 H'],['19082021','10 Muharram 1443 H'],['20082021','11 Muharram 1443 H'],['21082021','12 Muharram 1443 H'],['22082021','13 Muharram 1443 H'],['23082021','14 Muharram 1443 H'],['24082021','15 Muharram 1443 H'],['25082021','16 Muharram 1443 H'],['26082021','17 Muharram 1443 H'],['27082021','18 Muharram 1443 H'],['28082021','19 Muharram 1443 H'],['29082021','20 Muharram 1443 H'],['30082021','21 Muharram 1443 H'],['31082021','22 Muharram 1443 H'],['01092021','23 Muharram 1443 H'],['02092021','24 Muharram 1443 H'],['03092021','25 Muharram 1443 H'],['04092021','26 Muharram 1443 H'],['05092021','27 Muharram 1443 H'],['06092021','28 Muharram 1443 H'],['07092021','29 Muharram 1443 H'],['08092021','1 Safar 1443 H'],['09092021','2 Safar 1443 H'],['10092021','3 Safar 1443 H'],['11092021','4 Safar 1443 H'],['12092021','5 Safar 1443 H'],['13092021','6 Safar 1443 H'],['14092021','7 Safar 1443 H'],['15092021','8 Safar 1443 H'],['16092021','9 Safar 1443 H'],['17092021','10 Safar 1443 H'],['18092021','11 Safar 1443 H'],['19092021','12 Safar 1443 H'],['20092021','13 Safar 1443 H'],['21092021','14 Safar 1443 H'],['22092021','15 Safar 1443 H'],['23092021','16 Safar 1443 H'],['24092021','17 Safar 1443 H'],['25092021','18 Safar 1443 H'],['26092021','19 Safar 1443 H'],['27092021','20 Safar 1443 H'],['28092021','21 Safar 1443 H'],['29092021','22 Safar 1443 H'],['30092021','23 Safar 1443 H'],['01102021','24 Safar 1443 H'],['02102021','25 Safar 1443 H'],['03102021','26 Safar 1443 H'],['04102021','27 Safar 1443 H'],['05102021','28 Safar 1443 H'],['06102021','29 Safar 1443 H'],['07102021','30 Safar 1443 H'],['08102021','1 Rabiul Awwal 1443 H'],['09102021','2 Rabiul Awwal 1443 H'],['10102021','3 Rabiul Awwal 1443 H'],['11102021','4 Rabiul Awwal 1443 H'],['12102021','5 Rabiul Awwal 1443 H'],['13102021','6 Rabiul Awwal 1443 H'],['14102021','7 Rabiul Awwal 1443 H'],['15102021','8 Rabiul Awwal 1443 H'],['16102021','9 Rabiul Awwal 1443 H'],['17102021','10 Rabiul Awwal 1443 H'],['18102021','11 Rabiul Awwal 1443 H'],['19102021','12 Rabiul Awwal 1443 H'],['20102021','13 Rabiul Awwal 1443 H'],['21102021','14 Rabiul Awwal 1443 H'],['22102021','15 Rabiul Awwal 1443 H'],['23102021','16 Rabiul Awwal 1443 H'],['24102021','17 Rabiul Awwal 1443 H'],['25102021','18 Rabiul Awwal 1443 H'],['26102021','19 Rabiul Awwal 1443 H'],['27102021','20 Rabiul Awwal 1443 H'],['28102021','21 Rabiul Awwal 1443 H'],['29102021','22 Rabiul Awwal 1443 H'],['30102021','23 Rabiul Awwal 1443 H'],['31102021','24 Rabiul Awwal 1443 H'],['01112021','25 Rabiul Awwal 1443 H'],['02112021','26 Rabiul Awwal 1443 H'],['03112021','27 Rabiul Awwal 1443 H'],['04112021','28 Rabiul Awwal 1443 H'],['05112021','29 Rabiul Awwal 1443 H'],['06112021','1 Rabiul Akhir 1443 H'],['07112021','2 Rabiul Akhir 1443 H'],['08112021','3 Rabiul Akhir 1443 H'],['09112021','4 Rabiul Akhir 1443 H'],['10112021','5 Rabiul Akhir 1443 H'],['11112021','6 Rabiul Akhir 1443 H'],['12112021','7 Rabiul Akhir 1443 H'],['13112021','8 Rabiul Akhir 1443 H'],['14112021','9 Rabiul Akhir 1443 H'],['15112021','10 Rabiul Akhir 1443 H']
+]);
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var tanggal = String(today.getDate());
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+var today = dd + '' + mm + '' + yyyy;
+
+var d = new Date();
+var bulan = monthNames[d.getMonth()];
+var todaylengkap = dayName + ', ' + tanggal + ' ' + bulan  + ' ' + yyyy;
+
+x = document.getElementById("masehi")
+x.innerHTML = todaylengkap;
+y = document.getElementById("hijriah")
+y.innerHTML = map.get(today);
+
+</script>
+
+</body>
+</html>
